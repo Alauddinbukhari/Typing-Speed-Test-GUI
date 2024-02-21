@@ -1,1 +1,12 @@
-2
+Input = String of character typing continously
+Output = Number generally average speed test
+
+
+
+Steps :
+1. Display Paragraph - figure out how to display label on text
+2. Let User type the same paragraph -
+3.Catch the input
+4.Calculate speed
+5. give user they speed
+
