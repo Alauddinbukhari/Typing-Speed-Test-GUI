@@ -9,6 +9,7 @@ def increament_time(second): # add a functionality to call this function for eac
     second+=1
 
     if second==60:
+        pass
         #call a function for a fetchiing text data adn caluculatiing wpm
         #to calculate wpa fetch all data then divide by 5 then by total minutes
 
@@ -17,7 +18,8 @@ def increament_time(second): # add a functionality to call this function for eac
 
 
 def detect_typing():
-    pass
+    text_data= text_box.get()
+
 
 def catch_input():
     pass
@@ -37,4 +39,13 @@ paragraph_text = (
 
 # Create a Label widget to display the paragraph
 paragraph_label = Label(window, text=paragraph_text, justify=LEFT, wraplength=480)
-paragraph_label.place(relx=0.5,rely=0.1,an
+paragraph_label.place(relx=0.5,rely=0.1, anchor=CENTER)
+
+
+
+text_box = Text(window, wrap="word", height=10, width=40)
+text_box.place(relx=0.5,rely=0.8, anchor=CENTER)
+
+
+
+mainloop()
