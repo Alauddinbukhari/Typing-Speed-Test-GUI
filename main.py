@@ -1,45 +1,48 @@
 from tkinter import *
-from para_sentence import paragraph
+from para_sentence import paragraph_text
+
+
+
 
 window= Tk()
 window.config(width=500,height=500)
 window.title("Typing Test Speed")
 second =0
-def calcualte_wpm(second): # add a functionality to call this function for each second , if only  user start typing
+wpm=0
 
-    if second>=60:
-        to_min=second/60
-        wpm =
+#functionalities to add , counting accuracy,
+# improving paragraph ui,defining how to stop a funcion when the lenght ends
 
-        #call a function for a fetchiing text data adn caluculatiing wpm
-        #to calculate wpa fetch all data then divide by 5 then by total minutes
+def calculate_wpm(sec, text_len):
+    if sec >= 60:
+        to_min = sec / 60
+        wpm = (text_len / 5) / to_min
+        print(wpm)
+        return wpm
 
-    #add a functionality for checking if all pragraph words are typed
+        # Call a function for fetching text data and calculating WPM
+        # To calculate WPM, fetch all data, then divide by 5, then by total minutes
 
-
+# Add a functionality for checking if all paragraph words are typed
+def display_after_complete():
+    print(f"your speed per minute is {wpm}")
 
 def detect_and_increment(second):
-    text_data= len(text_box.get("1.0", "end-1c"))
-    if text_data>0:
-        calculate_wpm(second)
+    text_length = len(text_box.get("1.0", "end-1c"))
+    if text_length>=298:
+        display_after_complete()
+    if text_length > 0:
+        print(text_length)
+        calculate_wpm(second,text_length)
         second += 1
-    window.after(1000, lambda:detect_and_increment(second))
-
-def catch_input():
-    pass
+    window.after(1000, lambda: detect_and_increment(second))
 
 
 
-def calculate_wpm():
-    pass
 
 ##########UI#########
-paragraph_text = (
-    "A paragraph is a series of related sentences developing a central idea, called the topic.\n"
-    "Try to think about paragraphs in terms of thematic unity:\n"
-    "a paragraph is a sentence or a group of sentences that supports one central, unified idea.\n"
-    "Paragraphs add one idea at a time to your broader argument."
-)
+
+
 
 # Create a Label widget to display the paragraph
 paragraph_label = Label(window, text=paragraph_text, justify=LEFT, wraplength=480)
@@ -47,7 +50,7 @@ paragraph_label.place(relx=0.5,rely=0.1, anchor=CENTER)
 
 
 
-text_box = Text(window, wrap="word", height=10, width=40)
+text_box = Text(window, wrap="word", height=7, width=40)
 text_box.place(relx=0.5,rely=0.8, anchor=CENTER)
 
 
