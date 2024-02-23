@@ -9,6 +9,7 @@ def calcualte_wpm(second): # add a functionality to call this function for each 
 
     if second>=60:
         to_min=second/60
+        wpm =
 
         #call a function for a fetchiing text data adn caluculatiing wpm
         #to calculate wpa fetch all data then divide by 5 then by total minutes
