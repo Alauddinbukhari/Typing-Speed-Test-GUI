@@ -13,6 +13,7 @@ wpm = 0
 
 # Function to calculate words per minute (wpm)
 def calculate_wpm(sec, text_len):
+    global wpm
     if sec >= 60:
         to_min = sec / 60
         wpm = (text_len / 5) / to_min  # Assuming an average word length of 5 characters

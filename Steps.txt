@@ -18,4 +18,4 @@ Steps :
         # To calculate WPM, fetch all data, then divide by 5, then by total minutes
 
 # Add a functionality for checking if all paragraph words are typed
-
+#add a second to ui
