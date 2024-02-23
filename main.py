@@ -10,8 +10,6 @@ window.title("Typing Test Speed")
 second =0
 wpm=0
 
-#functionalities to add , counting accuracy,
-# improving paragraph ui,defining how to stop a funcion when the lenght ends
 
 def calculate_wpm(sec, text_len):
     if sec >= 60:
