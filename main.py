@@ -11,6 +11,12 @@ window.title("Typing Test Speed")
 second = 0
 wpm = 0
 
+def update_sec_label(second):
+    seconds_label.config(text=str(second))
+
+
+
+
 # Function to calculate words per minute (wpm)
 def calculate_wpm(sec, text_len):
     global wpm
@@ -34,9 +40,11 @@ def detect_and_increment(second):
 
     # If there is text in the text box, calculate wpm and increment time
     if text_length > 0:
-        print(text_length)
+
         calculate_wpm(second, text_length)
         second += 1
+
+        update_sec_label(second)
 
     # Schedule the function to run after 1000 milliseconds (1 second)
     window.after(1000, lambda: detect_and_increment(second))
@@ -45,14 +53,18 @@ def detect_and_increment(second):
 
 # Label to display the given paragraph
 paragraph_label = Label(window, text=paragraph_text, justify=LEFT, wraplength=480)
-paragraph_label.place(relx=0.5, rely=0.1, anchor=CENTER)
+paragraph_label.pack(anchor='center', pady=10)
 
-second_label=Label
+seconds_label = Label(text="0")
+seconds_label.pack(side="right",anchor="n")
+
 
 
 # Text box for user input
+
 text_box = Text(window, wrap="word", height=7, width=40)
-text_box.place(relx=0.5, rely=0.8, anchor=CENTER)
+text_box.pack(anchor='center', pady=10)
+
 
 # Call the detect_and_increment function to start tracking time and checking for completion
 detect_and_increment(second)
