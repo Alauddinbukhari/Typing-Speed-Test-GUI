@@ -14,8 +14,7 @@ Steps :
 #improvements_checklist
 #functionalities to add , counting accuracy,
 # improving paragraph ui,defining how to stop a funcion when the lenght ends
- # Call a function for fetching text data and calculating WPM
-        # To calculate WPM, fetch all data, then divide by 5, then by total minutes
-
-# Add a functionality for checking if all paragraph words are typed
-#add a second to ui
+# Call a function for fetching text data and calculating WPM
+# To calculate WPM, fetch all data, then divide by 5, then by total minutes
+# Add a functionality for checking if all paragraph words are typed - if typed
+#add a second to ui - this is done

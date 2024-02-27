@@ -4,22 +4,27 @@ from para_sentence import paragraph_text  # Assuming you have a separate file pa
 
 # Creating the main window
 window = Tk()
-window.config(width=500, height=500)
+window.config(width=500, height=1000)
 window.title("Typing Test Speed")
 
 # Initializing variables for time and words per minute (wpm)
 second = 0
 wpm = 0
 
+
+#update seconds on the gui screen
 def update_sec_label(second):
     seconds_label.config(text=str(second))
-
+#calculating accuracy, by checking the original with typed text
+def calculating_accuracy(typed_paragraph):
+    pass
 
 
 
 # Function to calculate words per minute (wpm)
 def calculate_wpm(sec, text_len):
     global wpm
+
     if sec >= 60:
         to_min = sec / 60
         wpm = (text_len / 5) / to_min  # Assuming an average word length of 5 characters
@@ -37,6 +42,11 @@ def detect_and_increment(second):
     # If the text length is greater than or equal to the expected length (298 in this case)
     if text_length >= 298:
         display_after_complete()
+        #TODO 1: display wpm to gui
+        #TODO 2:display accuracy to gui
+        #TODO 3 : Don't allow user to write more than paragraph words
+
+
 
     # If there is text in the text box, calculate wpm and increment time
     if text_length > 0:
