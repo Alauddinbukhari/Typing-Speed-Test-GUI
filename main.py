@@ -47,6 +47,9 @@ def detect_and_increment(second):
 paragraph_label = Label(window, text=paragraph_text, justify=LEFT, wraplength=480)
 paragraph_label.place(relx=0.5, rely=0.1, anchor=CENTER)
 
+second_label=Label
+
+
 # Text box for user input
 text_box = Text(window, wrap="word", height=7, width=40)
 text_box.place(relx=0.5, rely=0.8, anchor=CENTER)
